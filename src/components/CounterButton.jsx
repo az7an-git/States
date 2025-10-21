@@ -1,5 +1,3 @@
-import React from "react";
-
 const CounterButton = ({ onClick, label, colorClass }) => {
   return (
     <button
