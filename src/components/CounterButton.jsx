@@ -1,8 +1,8 @@
-const CounterButton = ({ onClick, label, colorClass }) => {
+const CounterButton = ({ onClick, label, styleClass }) => {
   return (
     <button
       onClick={onClick}
-      className={`${colorClass} px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:scale-105 transition-transform duration-200`}
+      className={`${styleClass} px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:scale-105 transition-transform duration-200`}
     >
       {label}
     </button>
