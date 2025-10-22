@@ -44,10 +44,59 @@ const Counter = () => {
           />
         </div>
       </div>
-
+      <MessageChanger />
+      <TextInputExample />
     </section>
   );
 };
 
 export default Counter;
 
+// Now Changing Dom Content
+const MessageChanger = () => {
+  const [message, setMessage] = useState("Hey!");
+
+  const changeMessage = () => {
+    setMessage("You clicked ME!");
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center p-6">
+      <h2 className="text-2xl font-bold text-blue-600">{message}</h2>
+
+      <CounterButton
+        onClick={changeMessage}
+        label="Change Message"
+        styleClass="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+      />
+    </div>
+  );
+};
+
+function TextInputExample() {
+  const [name, setName] = useState("");
+
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
+  return (
+    <div className="text-center ">
+      <div className="bg-white shadow-lg rounded-2xl p-8 w-80 text-center">
+        <h2 className="text-2xl font-semibold text-blue-700 mb-4">
+          Enter Your Name
+        </h2>
+        <input
+          type="text"
+          value={name}
+          onChange={handleChange}
+          placeholder="Enter Name..."
+          className="text-blue-600 border focus:ring outline-none rounded-lg px-3 py-2 w-full transition-all duration-200 placeholder:text-gray-400 focus:placeholder:text-transparent"
+        />
+        <p className="mt-4 text-blue-500 text-lg">
+          {name ? `Your name is: ${name}` : "Start typing above..."}
+        </p>
+      </div>
+    </div>
+  );
+}
