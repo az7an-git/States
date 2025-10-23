@@ -13,26 +13,43 @@ const Counter = () => {
         {/* Counter Card */}
         <CardLayout title={`Count: ${count}`}>
           <p className="text-blue-500">{counterMessage}</p>
+
           <div className="flex justify-center gap-2 w-full">
+            {/* Decrease Button */}
             <CounterButton
               label="–"
               onClick={() => {
-                setCount(count - 1);
+                // Direct update way:
+                // setCount(count - 1);
+
+                // Functional updater way (safer, uses latest value):
+                setCount((prev) => prev - 1);
+
                 setCounterMessage("Decreased");
               }}
             />
+
+            {/* Reset Button */}
             <CounterButton
               label="Reset"
               variant="secondary"
               onClick={() => {
+                // For fixed values, direct update is fine:
                 setCount(0);
                 setCounterMessage("Reset!");
               }}
             />
+
+            {/* Increase Button */}
             <CounterButton
               label="+"
               onClick={() => {
-                setCount(count + 1);
+                // Direct update way:
+                // setCount(count + 1);
+
+                // Functional updater way:
+                setCount((prev) => prev + 1);
+
                 setCounterMessage("Increased");
               }}
             />
