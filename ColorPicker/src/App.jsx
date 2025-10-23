@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="font-sans ">
+    <div className="font-sans bg-cyan-50 h-dvh">
       <ColorPicker />
     </div>
   );
